@@ -1,0 +1,36 @@
+buildscript {
+
+   repositories {
+      mavenCentral()
+   }
+   
+   dependencies {
+      classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.1.RELEASE")
+   }
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+bootJar {
+   launchScript()
+}
+
+repositories {
+   mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+   compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+   compile("org.springframework.boot:spring-boot-starter-web")
+   
+   // thymeleaf-layout-dialect - Allows layouts to be applied to pages.
+   compile("nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:2.1.1")
+   
+   testCompile("junit:junit")
+   testCompile("org.springframework.boot:spring-boot-starter-test")
+}

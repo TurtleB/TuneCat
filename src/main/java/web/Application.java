@@ -1,0 +1,16 @@
+package web;
+
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+
+@SpringBootApplication
+public class Application {
+   
+   
+   // Application launch point.
+   public static void main(String[] args) {
+      SpringApplication.run(Application.class, args);
+   }
+}
