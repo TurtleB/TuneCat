@@ -46,7 +46,11 @@ function initEditor() {
 //
 function draw() {
    if(editorActive) {
-      tuneEditor.handleNoteMovement(mouseY);
+      if(mouseIsPressed) {
+		tuneEditor.handleNoteMovement(mouseY);
+	  } else if(touches.length > 0) {
+		tuneEditor.handleNoteMovement(touches[0].y);
+	  }
    }
 };
 
@@ -72,6 +76,26 @@ function mouseClicked() {
       initEditor();
    }
 };
+
+
+//
+function touchStarted() {
+	if(editorActive) {
+		tuneEditor.handleMousePress(touches[0].x, touches[0].y);
+	}
+	
+	if(!editorActive) {
+      initEditor();
+   }
+}
+
+
+//
+function touchEnded() {
+	if(editorActive) {
+		tuneEditor.handleMouseRelease();
+	}
+}
 
 
 //
