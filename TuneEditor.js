@@ -286,7 +286,7 @@ function TuneEditor(skinType) {
    
    // Saves this tune as a URL to the clipboard.
    this.copyTuneUrl = function() {
-      var tuneUrl = "tune.cat/?tune=";
+      var tuneUrl = "http://tune.cat/?tune=";
       var i;
       for(i = 0; i < this.tune.length; i++) {
          if(this.tune[i] == Note.random) {
